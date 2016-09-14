@@ -57,8 +57,10 @@ export class DatePickerUiOptions {
   public showISOWeekNumbers:boolean = false;
   /** enables current date under calendar */
   public showCurrentDate:boolean = true;
-  /** if `true` label `Custom Ranges` will be shown if `ranges` are defined */
+  /** if `true` label `Custom Ranges` will be shown if `customDates` are defined */
   public showCustomRangeLabel:boolean = true;
+  /** if `true` labels for `Ranges` will be shown if `ranges` are defined */
+  public showCustomRanges: boolean = true;
   /** if `false` and one of ranges is selected, calendar will be hidden */
   public alwaysShowCalendars:boolean = false;
   /** lower level of view mode */
@@ -162,6 +164,10 @@ export class DatePickerOptions {
 
       if (typeof ui.showCustomRangeLabel !== 'undefined') {
         this.ui.showCustomRangeLabel = !!ui.showCustomRangeLabel;
+      }
+
+      if (typeof ui.showCustomRanges !== 'undefined') {
+          this.ui.showCustomRanges = !!ui.showCustomRanges;
       }
 
       if (typeof ui.alwaysShowCalendars !== 'undefined') {

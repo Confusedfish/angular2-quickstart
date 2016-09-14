@@ -45,7 +45,7 @@ export class CustomRangePickerComponent extends DatePickerBase {
     }
 
     this.isCustomRangeShown = this.options.ui.showCustomRangeLabel;
-    this.isShown = true;
+    this.isShown = this.options.ui.showCustomRanges;
 
     this.ranges = keys.map((key:string) => {
       const value = (this.options.ranges[key] as string[]).map((date:any)=> moment(date));
