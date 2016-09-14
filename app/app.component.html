@@ -1,0 +1,135 @@
+﻿<div class="container">
+    <div class="row">
+        <h3>Datepicker options:</h3>
+        <div class="form-group"><div class="col-md-3"><label>Mode: </label></div><select [(ngModel)]="opts.mode"><option value="date">date</option><option value="daterange">daterange</option></select></div>
+        <div class="form-group"><div class="col-md-3"><label>Initial display mode: </label></div><select [(ngModel)]="opts.viewMode"><option value="days">days</option><option value="months">months</option><option value="years">years</option></select></div>
+        <div class="form-group"><div class="col-md-3"><label>Min mode: </label></div><select [(ngModel)]="opts.ui.minMode"><option value="days">days</option><option value="months">months</option><option value="years">years</option></select></div>
+        <div class="form-group"><div class="col-md-3"><label>Max mode: </label></div><select [(ngModel)]="opts.ui.maxMode"><option value="days">days</option><option value="months">months</option><option value="years">years</option></select></div>
+        <div class="form-group">
+            <div class="col-md-3"><label>Locale: </label></div>
+            <select [(ngModel)]="opts.locale">
+                <option value="af">af</option>
+                <option value="ar-ma">ar-ma</option>
+                <option value="ar-sa">ar-sa</option>
+                <option value="ar-tn">ar-tn</option>
+                <option value="ar">ar</option>
+                <option value="az">az</option>
+                <option value="be">be</option>
+                <option value="bg">bg</option>
+                <option value="bn">bn</option>
+                <option value="bo">bo</option>
+                <option value="br">br</option>
+                <option value="bs">bs</option>
+                <option value="ca">ca</option>
+                <option value="cs">cs</option>
+                <option value="cv">cv</option>
+                <option value="cy">cy</option>
+                <option value="da">da</option>
+                <option value="de-at">de-at</option>
+                <option value="de">de</option>
+                <option value="dv">dv</option>
+                <option value="el">el</option>
+                <option value="en-au">en-au</option>
+                <option value="en-ca">en-ca</option>
+                <option value="en-gb">en-gb</option>
+                <option value="en-ie">en-ie</option>
+                <option value="en-nz">en-nz</option>
+                <option value="eo">eo</option>
+                <option value="es-do">es-do</option>
+                <option value="es">es</option>
+                <option value="et">et</option>
+                <option value="eu">eu</option>
+                <option value="fa">fa</option>
+                <option value="fi">fi</option>
+                <option value="fo">fo</option>
+                <option value="fr-ca">fr-ca</option>
+                <option value="fr-ch">fr-ch</option>
+                <option value="fr">fr</option>
+                <option value="fy">fy</option>
+                <option value="gd">gd</option>
+                <option value="gl">gl</option>
+                <option value="he">he</option>
+                <option value="hi">hi</option>
+                <option value="hr">hr</option>
+                <option value="hu">hu</option>
+                <option value="hy-am">hy-am</option>
+                <option value="id">id</option>
+                <option value="is">is</option>
+                <option value="it">it</option>
+                <option value="ja">ja</option>
+                <option value="jv">jv</option>
+                <option value="ka">ka</option>
+                <option value="kk">kk</option>
+                <option value="km">km</option>
+                <option value="ko">ko</option>
+                <option value="ky">ky</option>
+                <option value="lb">lb</option>
+                <option value="list.txt">list.txt</option>
+                <option value="lo">lo</option>
+                <option value="lt">lt</option>
+                <option value="lv">lv</option>
+                <option value="me">me</option>
+                <option value="mk">mk</option>
+                <option value="ml">ml</option>
+                <option value="mr">mr</option>
+                <option value="ms-my">ms-my</option>
+                <option value="ms">ms</option>
+                <option value="my">my</option>
+                <option value="nb">nb</option>
+                <option value="ne">ne</option>
+                <option value="nl">nl</option>
+                <option value="nn">nn</option>
+                <option value="pa-in">pa-in</option>
+                <option value="pl">pl</option>
+                <option value="pt-br">pt-br</option>
+                <option value="pt">pt</option>
+                <option value="ro">ro</option>
+                <option value="ru">ru</option>
+                <option value="se">se</option>
+                <option value="si">si</option>
+                <option value="sk">sk</option>
+                <option value="sl">sl</option>
+                <option value="sq">sq</option>
+                <option value="sr-cyrl">sr-cyrl</option>
+                <option value="sr">sr</option>
+                <option value="ss">ss</option>
+                <option value="sv">sv</option>
+                <option value="sw">sw</option>
+                <option value="ta">ta</option>
+                <option value="te">te</option>
+                <option value="th">th</option>
+                <option value="tl-ph">tl-ph</option>
+                <option value="tlh">tlh</option>
+                <option value="tr">tr</option>
+                <option value="tzl">tzl</option>
+                <option value="tzm-latn">tzm-latn</option>
+                <option value="tzm">tzm</option>
+                <option value="uk">uk</option>
+                <option value="uz">uz</option>
+                <option value="vi">vi</option>
+                <option value="x-pseudo">x-pseudo</option>
+                <option value="zh-cn">zh-cn</option>
+                <option value="zh-tw">zh-tw</option>
+            </select> <small>Although it is unlikely that you would ever change locale like this, this makes it easy to change moment.locale()</small>
+        </div>
+        <div class="form-group"><div class="col-md-3"><label>Month view: </label></div><input type="number" min="1" max="10" [(ngModel)]="opts.ui.monthColumns"> x <input type="number" min="1" max="10" [(ngModel)]="opts.ui.monthRows"></div>
+        <div class="form-group"><div class="col-md-3"><label>Year view: </label></div><input type="number" min="1" max="10" [(ngModel)]="opts.ui.yearColumns"> x <input type="number" min="1" max="10" [(ngModel)]="opts.ui.yearRows"></div>
+        <div class="form-group"><div class="col-md-3"><label>Day view: </label></div><input type="number" min="1" max="10" [(ngModel)]="opts.ui.dayColumns"> x <input type="number" min="1" max="10" [(ngModel)]="opts.ui.dayRows"></div>
+        <div class="col-md-12"><div class="checkbox"><label><input type="checkbox" [(ngModel)]="opts.ui.showWeekNumbers" /> Show week numbers</label></div></div>
+        <div class="col-md-12"><div class="checkbox"><label><input type="checkbox" [(ngModel)]="opts.ui.showISOWeekNumbers" /> Show ISO week numbers</label></div></div>
+        <div class="col-md-12"><div class="checkbox"><label><input type="checkbox" [(ngModel)]="opts.ui.showCurrentDate" /> Show current date</label></div></div>
+        <div class="col-md-12"><div class="checkbox"><label><input type="checkbox" [(ngModel)]="opts.ui.alwaysShowCalendars" /> Always show calendars</label></div></div>
+        <div class="col-md-12"><div class="checkbox"><label><input type="checkbox" [(ngModel)]="opts.ui.showCustomRanges" /> Show custom date ranges</label></div></div>
+        <div class="col-md-12"><div class="checkbox"><label><input type="checkbox" [(ngModel)]="opts.ui.showCustomRangeLabel" /> Show custom range label (requires show custom date ranges)</label></div></div>
+
+        <button class="btn btn-success btn-sm" (click)="refresh()">refresh</button>
+
+    </div><br />
+    <!--<pre>{{opts | json}}</pre>-->
+    <div class="row">
+        <bs-datepicker [options]="opts"></bs-datepicker>
+        <!--<bs-datepicker-inline [options]="opts"></bs-datepicker-inline>-->
+    </div>
+</div>
+
+

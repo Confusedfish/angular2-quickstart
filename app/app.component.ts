@@ -3,17 +3,9 @@ import * as moment from 'moment';
 moment.locale('en');
 
 @Component({
-  selector: 'my-app',
-  template: `
-    <input type="text" [(ngModel)]="opts.mode">
-    <input type="text" [(ngModel)]="opts.viewMode">
-    <button class="btn btn-success btn-sm" (click)="refresh()">refresh</button>
-    <!--<pre>{{opts | json}}</pre>-->
-    <div class="row">
-        <bs-datepicker [options]="opts"></bs-datepicker>
-        <!--<bs-datepicker-inline [options]="opts"></bs-datepicker-inline>-->
-    </div>
-  `
+    selector: 'my-app',
+    moduleId: module.id,
+    templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   public opts:any = {
@@ -25,7 +17,15 @@ export class AppComponent implements OnInit {
       showWeekNumbers: 1,
       showISOWeekNumbers: 0,
       showCurrentDate: 1,
-      alwaysShowCalendars: 1
+      alwaysShowCalendars: 1,
+      showCustomRangeLabel: true,
+      showCustomRanges: true,
+      monthColumns: 3,
+      monthRows: 4,
+      yearColumns: 5,
+      yearRows: 4,
+      dayColumns: 7,
+      dayRows: 6
     },
     ranges: {
       'Today': [moment(), moment()],
@@ -41,11 +41,13 @@ export class AppComponent implements OnInit {
     }],
     date: {
       // min : moment().subtract(5, 'days')
-    }
+    },
+    locale: 'en-GB'
   };
 
-  public refresh():void {
-    this.opts = Object.assign({}, this.opts);
+  public refresh(): void {
+      moment.locale(this.opts.locale);
+      this.opts = Object.assign({}, this.opts);
   }
 
   public ngOnInit():void {
