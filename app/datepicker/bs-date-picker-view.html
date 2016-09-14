@@ -5,5 +5,5 @@
   <bs-day-picker *ngSwitchCase="'days'"></bs-day-picker>
   <bs-month-picker *ngSwitchCase="'months'"></bs-month-picker>
   <bs-year-picker *ngSwitchCase="'years'"></bs-year-picker>
-  <bs-datetimepicker></bs-datetimepicker>
+  <bs-datetimepicker *ngIf="options.ui.showTimePicker"></bs-datetimepicker>
 </div>

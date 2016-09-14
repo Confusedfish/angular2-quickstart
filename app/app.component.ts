@@ -25,7 +25,9 @@ export class AppComponent implements OnInit {
       yearColumns: 5,
       yearRows: 4,
       dayColumns: 7,
-      dayRows: 6
+      dayRows: 6,
+      singleDatePicker: false,
+      showTimePicker: true
     },
     ranges: {
       'Today': [moment(), moment()],

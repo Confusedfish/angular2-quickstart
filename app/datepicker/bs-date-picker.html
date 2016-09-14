@@ -1,7 +1,7 @@
 <div class="bs-datepicker-multiple">
   <div class="left">
     <bs-date-picker-view bsRole="left"></bs-date-picker-view>
-    <bs-date-picker-view bsRole="right"></bs-date-picker-view>
+    <bs-date-picker-view *ngIf="!singleDatePicker" bsRole="right"></bs-date-picker-view>
   </div>
   <div class="right">
     <bs-custom-range-picker></bs-custom-range-picker>

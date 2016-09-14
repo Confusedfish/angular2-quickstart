@@ -78,6 +78,12 @@ export class DatePickerUiOptions {
 
   public dayColums:number = 7;
   public dayRows:number = 6;
+
+  /** Only show a single date picker, not two side beside */
+  public singleDatePicker: boolean = false;
+
+  /** if false, hide the time picker(s) **/
+  public showTimePicker: boolean = true;
 }
 
 export class DatePickerLocale {
@@ -113,7 +119,7 @@ export class DatePickerOptions {
 
   public customDates:DatePickerCustomDates[];
   /** predefined set of ranges {'today': [moment(), moment()]} */
-  public ranges:{[key:string]:moment.Moment[]|string[]|Date[]};
+  public ranges: { [key: string]: moment.Moment[] | string[] | Date[] };
 
   public onUpdate:EventEmitter<DatePickerOptions> = new EventEmitter();
 
@@ -200,6 +206,14 @@ export class DatePickerOptions {
           this.ui.dayColums = ui.dayColumns;
       }
 
+      if (typeof ui.singleDatePicker !== 'undefined') {
+          this.ui.singleDatePicker = !!ui.singleDatePicker;
+      }
+
+      if (typeof ui.showTimePicker !== 'undefined') {
+          this.ui.showTimePicker = !!ui.showTimePicker;
+      }
+     
       // this.ui = Object.assign({}, this.ui, ui);
     }
 
