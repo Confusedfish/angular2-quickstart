@@ -380,8 +380,8 @@ export abstract class DatePickerBase implements OnInit {
   }
 
   public getMonthsCalendarMatrix(viewDate:moment.Moment/*, options:any*/):any {
-    const w = 3;
-    const h = 4;
+      const w = this.options.ui.monthColumns;
+      const h = this.options.ui.monthRows;
     let months = new Array(h);
     for (let row = 0; row < h; row++) {
       months[row] = new Array(w);
@@ -404,7 +404,7 @@ export abstract class DatePickerBase implements OnInit {
   }
 
   public getYearsCalendarMatrix(viewDate:moment.Moment/*, options:any*/):any {
-    let year = this.getStartingYear(viewDate.year());
+    const year = this.getStartingYear(viewDate.year());
     const cols = this.options.ui.yearColumns;
     const rows = this.options.ui.yearRows;
     let yearsMatrix = new Array(rows);

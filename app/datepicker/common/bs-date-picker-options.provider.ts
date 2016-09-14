@@ -67,6 +67,8 @@ export class DatePickerUiOptions {
   public minMode:DatePickerViewMode = 'days';
   /** upper level of view mode */
   public maxMode:DatePickerViewMode = 'years';
+  /** number of rows displayed in month selection mode */
+  public monthRows: number = 4;
   /** number of columns displayed in month selection mode */
   public monthColumns:number = 3;
   /** number of columns displayed in year selection mode */
@@ -172,6 +174,30 @@ export class DatePickerOptions {
 
       if (typeof ui.alwaysShowCalendars !== 'undefined') {
         this.ui.alwaysShowCalendars = !!ui.alwaysShowCalendars;
+      }
+
+      if (typeof ui.yearRows !== 'undefined') {
+          this.ui.yearRows = ui.yearRows;
+      }
+
+      if (typeof ui.yearColumns !== 'undefined') {
+          this.ui.yearColumns = ui.yearColumns;
+      }
+
+      if (typeof ui.monthRows !== 'undefined') {
+          this.ui.monthRows = ui.monthRows;
+      }
+
+      if (typeof ui.monthColumns !== 'undefined') {
+          this.ui.monthColumns = ui.monthColumns;
+      }
+
+      if (typeof ui.dayRows !== 'undefined') {
+          this.ui.dayRows = ui.dayRows;
+      }
+
+      if (typeof ui.dayColumns !== 'undefined') {
+          this.ui.dayColums = ui.dayColumns;
       }
 
       // this.ui = Object.assign({}, this.ui, ui);
