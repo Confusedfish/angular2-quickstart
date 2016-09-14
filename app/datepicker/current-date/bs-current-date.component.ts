@@ -29,10 +29,10 @@ export class CurrentDateComponent extends DatePickerBase {
       return;
     }
 
-    if (!this.options.ui.showCurrentDate) {
-      this.isShown = false;
+    this.isShown = this.options.ui.showCurrentDate;
+    if (!this.options.ui.showCurrentDate)
       return;
-    }
+
     // todo: add support of timepicker enabled/disabled
     // todo: add support of min view mode
     const active = this.datePickerState.activeDate;
