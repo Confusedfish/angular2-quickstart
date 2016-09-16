@@ -19,7 +19,9 @@ export class DateTimePickerComponent extends DatePickerBase {
   public hours:string;
   public minutes:string;
   public ampm:string;
-  public showAmPm:boolean = true;
+  public showAmPm: boolean = true;
+  public minutesInc: number = 10;
+  public hoursInc: number = 1;
 
   public constructor(datePickerService:DatePickerState, options:DatePickerOptions) {
     super(datePickerService, options);
@@ -45,6 +47,8 @@ export class DateTimePickerComponent extends DatePickerBase {
       this.date.format('hh') : this.date.format('HH');
     this.ampm = this.date.format('a');
     this.showAmPm = this.options.timepicker.showAmPm;
+    this.minutesInc = this.options.timepicker.minutesInc;
+    this.hoursInc = this.options.timepicker.hoursInc;
   }
 
   public add(granularity:string):void {
@@ -65,6 +69,26 @@ export class DateTimePickerComponent extends DatePickerBase {
     if (granularity === 'hours') {
       this.date = this.date.clone().subtract(this.options.timepicker.hoursInc, granularity as moment.UnitOfTime);
     }
+  }
+
+  //Called by the UI when the user manually edits the hours / minutes number
+  private updateMinutes(event: Event) {
+      let newMinutes = Number(this.minutes)
+      if (this.date.get('minutes') == newMinutes)
+          return;
+
+      this.date.set('minutes',newMinutes);
+      //Raise the change event on the date
+      this.date = this.date.clone();
+  }
+  private updateHours(event: Event) {
+      let newHours = Number(this.hours)
+      if (this.date.get('hours') == newHours)
+          return;
+
+      this.date.set('hours', newHours);
+      //Raise the change event on the date
+      this.date = this.date.clone();
   }
 
   public setTime(date:moment.Moment):moment.Moment {

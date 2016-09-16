@@ -1,13 +1,13 @@
 <div class="bs-timepicker-container">
   <div class="bs-timepicker-controls">
-    <button class="bs-decrease" (click)="subtract('hours')">-</button>
-    <input type="number" value="{{hours}}" min="0" max="{{showAmPm?11:23}}" placeholder="00">
-    <button class="bs-increase" (click)="add('hours')">+</button>
+    <button class="bs-decrease" tabindex="-1" aria-hidden="true" (click)="subtract('hours')">-</button>
+    <input type="number" [(ngModel)]="hours" min="0" step="{{hoursInc}}" max="{{showAmPm?11:23}}" (ngModelChange)="updateHours($event)" placeholder="00">
+    <button class="bs-increase" tabindex="-1" aria-hidden="true" (click)="add('hours')">+</button>
   </div>
   <div class="bs-timepicker-controls">
-    <button class="bs-decrease" (click)="subtract('minutes')">-</button>
-    <input type="number" min="0" max="59" step="5" value="{{minutes}}" placeholder="00">
-    <button class="bs-increase" (click)="add('minutes')">+</button>
+    <button class="bs-decrease" tabindex="-1" aria-hidden="true" (click)="subtract('minutes')">-</button>
+    <input type="number" min="0" max="59" step="{{minutesInc}}" [(ngModel)]="minutes" (ngModelChange)="updateMinutes($event)" placeholder="00">
+    <button class="bs-increase" tabindex="-1" aria-hidden="true" (click)="add('minutes')">+</button>
   </div>
   <button *ngIf="showAmPm" (click)="toggleMeridiem()" class="switch-time-format">{{ampm}}
     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAABSElEQVQYV3XQPUvDUBQG4HNuagtVqc6KgouCv6GIuIntYBLB9hcIQpLStCAIV7DYmpTcRWcXqZio3Vwc/UCc/QEqfgyKGbr0I7nS1EiHeqYzPO/h5SD0jaxUZjmSLCB+OFb+UFINFwASAEAdpu9gaGXVyAHHFQBkHpKHc6a9dzECvADyY9sqlAMsK9W0jzxDXqeytr3mhQckxSji27TJJ5/rPmIpwJJq3HrtduriYOurv1a4i1p5HnhkG9OFymi0ReoO05cGwb+ayv4dysVygjeFmsP05f8wpZQ8fsdvfmuY9zjWSNqUtgYFVnOVReILYoBFzdQI5/GGFzNHhGbeZnopDGU29sZbscgldmC99w35VOATTycIMMcBXIfpSVGzZhA6C8hh00conln6VQ9TGgV32OEAKQC4DrBq7CJwd0ggR7Vq/rPrfgB+C3sGypY5DAAAAABJRU5ErkJggg==" alt="">

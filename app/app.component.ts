@@ -46,7 +46,9 @@ export class AppComponent implements OnInit {
     },
     locale: 'en-GB',
     timepicker: {
-        showAmPm : true
+        showAmPm: true,
+        hoursInc: 1,
+        minutesInc: 10
     }
   };
 

@@ -227,6 +227,12 @@ export class DatePickerOptions {
       if (typeof timepicker.showAmPm === 'boolean') {
         this.timepicker.showAmPm = timepicker.showAmPm
       }
+      if (typeof timepicker.hoursInc === 'number') {
+          this.timepicker.minutesInc = timepicker.minutesInc
+      }
+      if (typeof timepicker.hoursInc === 'number') {
+          this.timepicker.hoursInc = timepicker.hoursInc
+      }
     }
 
     // Object.assign(this, options);
