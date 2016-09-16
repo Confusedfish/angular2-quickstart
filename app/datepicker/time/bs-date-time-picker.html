@@ -1,12 +1,12 @@
 <div class="bs-timepicker-container">
   <div class="bs-timepicker-controls">
     <button class="bs-decrease" (click)="subtract('hours')">-</button>
-    <input type="text" value="{{hours}}" placeholder="00">
+    <input type="number" value="{{hours}}" min="0" max="{{showAmPm?11:23}}" placeholder="00">
     <button class="bs-increase" (click)="add('hours')">+</button>
   </div>
   <div class="bs-timepicker-controls">
     <button class="bs-decrease" (click)="subtract('minutes')">-</button>
-    <input type="text" value="{{minutes}}" placeholder="00">
+    <input type="number" min="0" max="59" step="5" value="{{minutes}}" placeholder="00">
     <button class="bs-increase" (click)="add('minutes')">+</button>
   </div>
   <button *ngIf="showAmPm" (click)="toggleMeridiem()" class="switch-time-format">{{ampm}}

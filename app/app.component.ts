@@ -44,7 +44,10 @@ export class AppComponent implements OnInit {
     date: {
       // min : moment().subtract(5, 'days')
     },
-    locale: 'en-GB'
+    locale: 'en-GB',
+    timepicker: {
+        showAmPm : true
+    }
   };
 
   public refresh(): void {

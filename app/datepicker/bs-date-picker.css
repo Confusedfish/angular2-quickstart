@@ -284,6 +284,11 @@
   text-align: center;
   border: 1px solid #e9edf0;
 }
+.bs-timepicker-controls input[type=number]::-webkit-inner-spin-button, 
+.bs-timepicker-controls input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .bs-timepicker .switch-time-format{
   text-transform:uppercase;
   min-width: 54px;
