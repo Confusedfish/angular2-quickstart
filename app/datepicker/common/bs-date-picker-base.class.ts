@@ -404,7 +404,7 @@ export abstract class DatePickerBase implements OnInit {
   }
 
   public getYearsCalendarMatrix(viewDate:moment.Moment/*, options:any*/):any {
-    const year = this.getStartingYear(viewDate.year());
+    let year = this.getStartingYear(viewDate.year());
     const cols = this.options.ui.yearColumns;
     const rows = this.options.ui.yearRows;
     let yearsMatrix = new Array(rows);
